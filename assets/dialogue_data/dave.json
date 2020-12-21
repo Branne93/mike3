@@ -1,0 +1,77 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Tjena dave!", 
+	"next": "second"
+	},
+"second":{
+	"type": "other", 
+	"content": "Tjena mike! Tack för förut!",
+	"next": "third"
+	},
+"third":{
+	"type": "option", 
+	"options": ["Inte bakis längre?", "Vad gör du!", "Skoj med kapitel två va! Vad tyckte du om första spelet!"],
+	"next_option": ["inte_bakis", "vad", "meme"]
+	},
+"inte_bakis":{
+	"type": "mike", 
+	"content": "Ser att du mår mycket bättre nu, gott med monsterhummus?", 
+	"next": "monsterhummussnack"
+	},
+"monsterhummussnack":{
+	"type": "other", 
+	"content": "Mycket bättrte! Tack för all monsterhummus. Den luktar ganska skumt nu dock.",
+	"next": "done"
+	},
+"vad":{
+	"type": "mike", 
+	"content": "Vad hittar du på?", 
+	"next": "marsvin"
+	},
+"marsvin":{
+	"type": "other", 
+	"content": "Jag leker kurragömma med mina marsvin, men de är för duktiga.",
+	"next": "marsvinA"
+	},
+"marsvinA":{
+	"type": "other", 
+	"content": "Om du hittar dem kan du väl säga till?",
+	"next": "done"
+	},
+"meme":{
+	"type": "mike", 
+	"content": "Vad tyckte du om första spelet?", 
+	"next": "heltok"
+	},
+"heltok":{
+	"type": "other", 
+	"content": "Det var väl kul, cool musik men det kunde ha varit längre.",
+	"next": "liten"
+	},
+"liten":{
+	"type": "other", 
+	"content": "Men vet du varför min sprite är så jävla kort jämfört med dig?",
+	"next": "mike_liten"
+	},
+"mike_liten":{
+	"type": "mike", 
+	"content": "Nä egentligen inte, det är nog bara Branne som är kass på art.",
+	"next": "done"
+	},
+"marsvin1":{
+	"type": "other", 
+	"content": "Åh, du har hittat ett av mina marsvin! Nu måste jag bara hitta det andra!.",
+	"next": "done"
+	},
+"marsvin2":{
+	"type": "other", 
+	"content": "Ey, båda mina marsvin är funna! Vill du ha monsterhummus? Finns lite över!",
+	"next": "get_monsterhummus"
+	},
+"get_monsterhummus":{
+	"type": "signal", 
+	"content": "monsterhummus",
+	"next": "done"
+	}
+}

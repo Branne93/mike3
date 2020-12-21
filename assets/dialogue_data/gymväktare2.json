@@ -1,0 +1,32 @@
+{
+"first":{
+	"type": "other", 
+	"content": "Du förstår mitt barn, det tär mig hårt att säga men...", 
+	"next": "second"
+	},
+"second":{
+	"type": "other", 
+	"content": "Det har blivit olagligt att gymma!",
+	"next": "third"
+	},
+"third":{
+	"type": "other", 
+	"content": "Ja det beslöts nyss, i den mörka staden i fjärran",
+	"next":"fourth"
+	},
+"fourth":{
+	"type": "other", 
+	"content": "Stockholm!", 
+	"next": "tyna"
+	},
+"tyna":{
+	"type": "other", 
+	"content": "Jag kommer tyna bort nu, som allt annat som är gott. Farväl.",
+	"next": "end"
+	},
+"end":{
+	"type": "signal", 
+	"content": "exit",
+	"next": "done"
+	}
+}

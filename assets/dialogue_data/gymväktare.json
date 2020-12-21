@@ -1,0 +1,62 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Åh du store, jag vill in och gymma!", 
+	"next": "second"
+	},
+"second":{
+	"type": "other", 
+	"content": "Bib bab biceps! Nu ska vi se här!",
+	"next": "check"
+	},
+"check":{
+	"type": "signal", 
+	"content": "check_win",
+	"next": "fail"
+	},
+"fail":{
+	"type": "other", 
+	"content": "Din själ är värdig, men du saknar utrustningen!",
+	"next":"utrustning"
+	},
+"utrustning":{
+	"type": "other", 
+	"content": "För att kunna gymma krävs tingest tre!", 
+	"next": "kläder"
+	},
+"kläder":{
+	"type": "other", 
+	"content": "Gymkläder!",
+	"next": "skor"
+	},
+"skor":{
+	"type": "other", 
+	"content": "Gympaskor!", 
+	"next": "deo"
+	},
+"deo":{
+	"type": "other", 
+	"content": "Deo!",
+	"next": "ok"
+	},
+"ok":{
+	"type": "mike", 
+	"content": "Right, kläder, dojjor, deo. Förstått.",
+	"next": "done"
+	},
+"win":{
+	"type": "other", 
+	"content": "Välkommen!", 
+	"next": "nej"
+	},
+"nej":{
+	"type": "other", 
+	"content": "... Är vad jag hade sagt",
+	"next": "end"
+	},
+"end":{
+	"type": "signal", 
+	"content": "end",
+	"next": "done"
+	}
+}

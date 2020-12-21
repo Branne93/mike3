@@ -1,0 +1,77 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Öh, tjena jens? Fullt upp ser jag?", 
+	"next": "second"
+	},
+"second":{
+	"type": "other", 
+	"content": "Jävla skit... Oj förlåt mike jag såg dig inte där!",
+	"next": "third"
+	},
+"third":{
+	"type": "option", 
+	"options": ["Vad gör du?", "Mossen är konstig.", "Du råkar inte ha ett extra par gympadojjor?"],
+	"next_option": ["whatdo", "mossen", "dojjor"]
+	},
+"whatdo":{
+	"type": "mike", 
+	"content": "Vad är det du försöker göra för något?", 
+	"next": "dota"
+	},
+"dota":{
+	"type": "other", 
+	"content": "Jag spelar dota ser du väl!",
+	"next": "dota2"
+	},
+"dota2":{
+	"type": "other", 
+	"content": "Just nu måste jag få på mig de här gympadojjorna så jag kan trycka på R-knappen.", 
+	"next": "dota3"
+	},
+"dota3":{
+	"type": "mike", 
+	"content": "R-knappen? FÖr ultin? Men ligger inte den-",
+	"next": "dota4"
+	},
+"dota4":{
+	"type": "other", 
+	"content": "Huvudet på spiken. I den flummiga skogen vid mossen.",
+	"next": "done"
+	},
+"mossen":{
+	"type": "mike", 
+	"content": "Gick nyss genom mossen, knepig skog det där.", 
+	"next": "mossen2"
+	},
+"mossen2":{
+	"type": "other", 
+	"content": "Yeah spännande ställe det där. Man går lätte vilse",
+	"next": "done"
+	},
+"dojjor":{
+	"type": "mike", 
+	"content": "fräscha dojjor det där. Jag behöver ett par också...",
+	"next": "dojjor2"
+	},
+"dojjor2":{
+	"type": "other", 
+	"content": "Ah du hade lätt fått de här men jag är mitt i en teamfight och måste ulta!",
+	"next": "dojjor3"
+	},
+"dojjor3":{
+	"type": "other", 
+	"content": "Jag måste verkligen få tag i r-knappen, om jag bara kunde knyta de här skorna...",
+	"next": "done"
+	},
+"get_skor":{
+	"type": "signal", 
+	"content": "get_skor",
+	"next": "done"
+	},	
+"ge_rknapp":{
+	"type": "other", 
+	"content": "Fan r-knappen! Nu kan jag vinna min teamfight! Tack som fan mike, här ta mina dojjor!",
+	"next": "get_skor"
+	}
+}

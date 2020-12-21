@@ -1,0 +1,127 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/spritesheet_mike.png" type="Texture" id=1]
+[ext_resource path="res://scenes/mike/mike.gd" type="Script" id=2]
+[ext_resource path="res://scenes/mouse_control/mouse_control.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/pratbubbla/pratbubbla.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/actions/actions.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/speech_menu/speech_menu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Inventory/Inventory.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "gå"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "stå"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "ta"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "tänk"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 32.0261
+
+[node name="mike" type="KinematicBody2D"]
+collision/safe_margin = 0.008
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+vframes = 2
+hframes = 4
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/gå" = SubResource( 1 )
+"anims/stå" = SubResource( 2 )
+anims/ta = SubResource( 3 )
+"anims/tänk" = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -7.35092, 203.621 )
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 1366
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="mouse_control" parent="." instance=ExtResource( 3 )]
+mike_path = NodePath("..")
+actions_path = NodePath("../CanvasLayer/actions")
+inventory_path = NodePath("../inventory")
+
+[node name="pratbubbla" parent="." instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 11.4558, -193.317 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="actions" parent="CanvasLayer" instance=ExtResource( 5 )]
+inventory_path = NodePath("../../inventory")
+
+[node name="speech_menu" parent="CanvasLayer" instance=ExtResource( 6 )]
+visible = false
+
+[node name="inventory" parent="." instance=ExtResource( 7 )]

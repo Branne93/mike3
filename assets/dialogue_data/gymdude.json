@@ -1,0 +1,32 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Öh, hej hej!", 
+	"next": "second"
+	},
+"second":{
+	"type": "other", 
+	"content": "...",
+	"next": "third"
+	},
+"third":{
+	"type": "mike", 
+	"content": "Hallå?",
+	"next": "rude"
+	},
+"rude":{
+	"type": "other", 
+	"content": "Tala inte till mig, du är inte värdig", 
+	"next": "dryg"
+	},
+"dryg":{
+	"type": "option", 
+	"options": ["Vem fan är du då?", "Vad gör dig så himla bra!?", "Du är riktigt dryg!"],
+	"next_option": ["rude2", "rude2", "rude2"]
+	},
+"rude2":{
+	"type": "other", 
+	"content": "Jag är störst och mest välklädd på hela gymmet! Sluta prata med mig nu!", 
+	"next": "done"
+	}
+}
