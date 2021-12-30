@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/j3n5_spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://scenes/j3ns/j3ns.gd" type="Script" id=2]
+[ext_resource path="res://scenes/pratbubbla/pratbubbla.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "gå"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "stå"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 62.662, 167.474 )
+
+[node name="j3ns" type="KinematicBody2D"]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+hframes = 3
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "stå"
+"anims/gå" = SubResource( 1 )
+"anims/stå" = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 70.4873, 167.451 )
+shape = SubResource( 3 )
+
+[node name="pratbubbla" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 109.637, -37.3233 )
+
+[node name="feet_point" type="Position2D" parent="."]
+position = Vector2( 60.6503, 337.076 )

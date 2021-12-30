@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/pratbubbla/pratbubbla.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/god_mike/god_mike.gd" type="Script" id=2]
+[ext_resource path="res://assets/god_mike.png" type="Texture" id=3]
+
+[node name="god_mike" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="pratbubbla" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 684.774, 125.264 )

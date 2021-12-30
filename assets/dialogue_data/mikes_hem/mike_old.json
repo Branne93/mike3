@@ -1,0 +1,17 @@
+{
+"first":{
+	"type": "other", 
+	"content": "Jävlar är det såhär du bor??", 
+	"next": "second"
+	},
+"second":{
+	"type": "mike", 
+	"content": "Vad är problemet?",
+	"next": "third"
+	},
+"third":{
+	"type": "other", 
+	"content": "Är ju fullt med sand överallt, skaffa en dammsugare eller kvast eller nått!", 
+	"next": "done"
+	}
+}

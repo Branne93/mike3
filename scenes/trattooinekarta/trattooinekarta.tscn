@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/karta_bakgrund.png" type="Texture" id=1]
+[ext_resource path="res://assets/biceps_hus.png" type="Texture" id=2]
+[ext_resource path="res://assets/ravinen.png" type="Texture" id=3]
+[ext_resource path="res://assets/mike_hem.png" type="Texture" id=4]
+[ext_resource path="res://assets/staden.png" type="Texture" id=5]
+[ext_resource path="res://scenes/trattooinekarta/trattooinekarta.gd" type="Script" id=6]
+
+[node name="trattooinekarta" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+baren = "res://scenes/levels/baren/baren.tscn"
+mikes_hem = "res://scenes/levels/mikes_hem/mikes_hem.tscn"
+utanfor_biceps = "res://scenes/levels/utanfor_biceps/utanfor.tscn"
+hos_biceps = "res://scenes/levels/old_mike_hem/old_mike_hem.tscn"
+ravinen = "res://scenes/levels/ravinen/ravinen.tscn"
+greedo = "res://scenes/cutscenes/greedo/greedo.tscn"
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="biceps_hus" type="Button" parent="."]
+margin_left = 199.446
+margin_top = 50.9695
+margin_right = 368.446
+margin_bottom = 229.969
+focus_mode = 0
+icon = ExtResource( 2 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mike_hem" type="Button" parent="."]
+margin_left = 91.6071
+margin_top = 503.906
+margin_right = 322.607
+margin_bottom = 675.906
+focus_mode = 0
+icon = ExtResource( 4 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ravinen" type="Button" parent="."]
+margin_left = 560.73
+margin_top = 477.826
+margin_right = 1006.73
+margin_bottom = 687.826
+focus_mode = 0
+icon = ExtResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="staden" type="Button" parent="."]
+margin_left = 604.443
+margin_top = 126.616
+margin_right = 1163.44
+margin_bottom = 368.616
+focus_mode = 0
+icon = ExtResource( 5 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,22 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Fräsch lya det här.", 
+	"next": "second"
+	},
+"second":{
+	"type": "j3n5", 
+	"content": "Inredningen är lite udda, varför är det en planka på väggen?",
+	"next": "third"
+	},
+"third":{
+	"type": "mike_old", 
+	"content": "Vad kan du om inredning? Supergött med en najs planka.",
+	"next": "fourth"
+	},
+"fourth":{
+	"type": "j3n5", 
+	"content": "Jag har faktiskt läst design och det är typ inredning. Supergött är inte så jag hade beskrivit det.",
+	"next": "done"
+	}
+}

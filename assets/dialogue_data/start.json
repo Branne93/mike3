@@ -1,22 +1,32 @@
 {
 "first":{
-	"type": "mike", 
-	"content": "Dags att ta sig till gymmet!", 
+	"type": "j3n5", 
+	"content": "God dag!", 
 	"next": "second"
 	},
 "second":{
-	"type": "mike", 
-	"content": "Vänta lite nu, vart är mina gymkläder?",
+	"type": "d4v3", 
+	"content": "Varför bor Mike på en sandplanet, är det här någon rassegrej? Isåfall är jag inte med längre.",
 	"next": "third"
 	},
 "third":{
 	"type": "mike", 
-	"content": "Jag såg dem inte däruppe... Jag får väl ta och fixa nya!", 
+	"content": "Tjena kings! Mitt namn är Mike Tyngdlyfter! Välkommna till min glunkfarm!", 
 	"next" : "fourth"
 	},
 "fourth":{
+	"type": "j3n5", 
+	"content": "Jag är J3-N5, människa-interaktionsdesignsdroid och det här är min vän D4-V3, astrovegdroid.", 
+	"next" : "fifth"
+	},
+"fifth":{
+	"type": "d4v3", 
+	"content": "Vi behöver ta oss ifrån planeten asap! Det är superviktigt för rebellupproret!", 
+	"next" : "sixth"
+	},
+"sixth":{
 	"type": "mike", 
-	"content": "Vad som behövs borde jag kunna ta reda på vid gymmet.!", 
+	"content": "Oj jävlar! Ah, jag ska se vad jag kan göra!", 
 	"next" : "done"
 	}
 }

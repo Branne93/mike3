@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/pratbubbla/pratbubbla.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/gymväktare.png" type="Texture" id=2]
+[ext_resource path="res://scenes/gymväktare_spöke/gymväktare_spöke.gd" type="Script" id=3]
+
+[node name="gymväktare_spöke" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+flip_h = true
+
+[node name="pratbubbla" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 368.273, 242.431 )

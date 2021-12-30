@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/d4v3/d4v3.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/j3ns/j3ns.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/rymdskepp_korridor.png" type="Texture" id=3]
+[ext_resource path="res://scenes/mike/mike.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/cutscenes/korridor_fly/korridor_fly_cutscene.gd" type="Script" id=5]
+[ext_resource path="res://scenes/jacobofdarkness/jacobofdarkness.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/stromtrooper/stromtrooper.tscn" type="PackedScene" id=7]
+
+[node name="korridor_fly_cutscene" type="Node2D"]
+script = ExtResource( 5 )
+next_scene = "res://scenes/cutscenes/ökenkrasch/ökenkrasch.tscn"
+
+[node name="bakgrund" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="j3ns" parent="." instance=ExtResource( 2 )]
+position = Vector2( -9.05188, 276.646 )
+mikepath = NodePath("../mike")
+
+[node name="d4v3" parent="." instance=ExtResource( 1 )]
+position = Vector2( -197.322, 308.511 )
+mikepath = NodePath("../mike")
+
+[node name="mike" parent="." instance=ExtResource( 4 )]
+position = Vector2( 676.847, 617.649 )
+scale = Vector2( 1e-05, 1e-05 )
+pathfinder_path = NodePath("../Navigation2D")
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 135.993, 624.651 )
+
+[node name="Position2D2" type="Position2D" parent="."]
+position = Vector2( 949.355, 574.533 )
+
+[node name="Position2D3" type="Position2D" parent="."]
+position = Vector2( 774.654, 701.978 )
+
+[node name="stromtrooper" parent="." instance=ExtResource( 7 )]
+position = Vector2( -572.873, 101.881 )
+
+[node name="jacobofdarkness" parent="." instance=ExtResource( 6 )]
+position = Vector2( -517.757, 178.71 )
+
+[node name="stromtrooper2" parent="." instance=ExtResource( 7 )]
+position = Vector2( -783.886, 200.226 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.0

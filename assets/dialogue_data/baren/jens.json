@@ -1,0 +1,52 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Får droider vara i baren?!", 
+	"next": "second"
+	},
+"second":{
+	"type": "j3n5", 
+	"content": "Ja såklart? Eller varför skulle de inte få det?",
+	"next": "third"
+	},
+"third":{
+	"type": "mike", 
+	"content": "Såg en film en gång och där fick de inte det",
+	"next": "fourth"
+	},
+"fourth":{
+	"type": "option", 
+	"options": ["Jag vill ha bärs!", "Fan vad hög musik det är!", "Ska det inte vara fullt av skumma aliens här?"],
+	"next_option": ["bärs", "musik", "aliens"]
+	},
+"bärs":{
+	"type": "j3n5", 
+	"content": "Ah jag med, men jag är en droid så jag kan inte dricka bärs.",
+	"next": "sad"
+	},
+"sad":{
+	"type": "mike", 
+	"content": "Vilken cursed existens!", 
+	"next": "maskin"
+	},
+"maskin":{
+	"type": "j3n5", 
+	"content": "Ah men jag är bra på annat. Människa maskin interaktion till exempel!",
+	"next": "done"
+	},
+"musik":{
+	"type": "j3n5", 
+	"content": "Jag tycker det svänger!",
+	"next": "dave"
+	},
+"dave":{
+	"type": "d4v3", 
+	"content": "Synd att Branne aldrig gav dig en dansanimation.", 
+	"next": "done"
+	},
+"aliens":{
+	"type": "j3n5", 
+	"content": "Jo men det är söndag så alla är i kyrkan. Den enda killen kvar är den där snubben i hörnet.",
+	"next": "done"
+	}
+}

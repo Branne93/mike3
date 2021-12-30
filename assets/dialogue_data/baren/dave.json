@@ -1,0 +1,22 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Hur gillar du Trattooine än så länge?", 
+	"next": "second"
+	},
+"second":{
+	"type": "d4v3", 
+	"content": "Fattar inte riktigt grejen med all sand.",
+	"next": "third"
+	},
+"third":{
+	"type": "d4v3", 
+	"content": "Går inte jag på hjul förresten? Hur fan fungerar det i en sandlåda?",
+	"next": "fourth"
+	},
+"fourth":{
+	"type": "mike", 
+	"content": "Mannen, det är du som är droiden inte jag.",
+	"next": "done"
+	}
+}

@@ -1,0 +1,42 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Prippsen är där, och jag är här. Hmmmm.", 
+	"next": "second"
+	},
+"second":{
+	"type": "d4v3", 
+	"content": "Bara hoppa över.",
+	"next": "third"
+	},
+"third":{
+	"type": "mike", 
+	"content": "Jag kanske kan använda j3n5 på något- Nä det hade aldrig fungerat.",
+	"next": "fourth"
+	},
+"fourth":{
+	"type": "d4v3", 
+	"content": "Bara hoppa över!",
+	"next": "fifth"
+	},
+"fifth":{
+	"type": "mike", 
+	"content": "Om jag väntar så kanske prippsen växer vingar och flyger hit?.",
+	"next": "sixth"
+	},
+"sixth":{
+	"type": "d4v3", 
+	"content": "BARA HOPPA ÖVER!",
+	"next": "seven"
+	},
+"seven":{
+	"type": "mike", 
+	"content": "Jag får väl backtracka och leta efter något häftigt item antar jag.",
+	"next": "eight"
+	},
+"eight":{
+	"type": "d4v3", 
+	"content": "Du är hopplös.",
+	"next": "done"
+	}
+}

@@ -1,0 +1,22 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Ah min favoritbar! Godaste prippsen på hela planeten!", 
+	"next": "second"
+	},
+"second":{
+	"type": "mike_old", 
+	"content": "Jadu! Här har man sänkt en del i sin ungdom!",
+	"next": "third"
+	},
+"third":{
+	"type": "mike", 
+	"content": "Finns en guy i hörnet dock som tar hutlösa priser för att flyga oss in i mörkrets näste.",
+	"next": "fourth"
+	},
+"fourth":{
+	"type": "mike_old", 
+	"content": "Låt mig prata med honom, jag kan ett par trick...",
+	"next": "done"
+	}
+}

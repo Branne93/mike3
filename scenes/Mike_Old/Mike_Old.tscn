@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/obi_ceps_kenobi.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Mike_Old/Mike_Old.gd" type="Script" id=2]
+[ext_resource path="res://scenes/pratbubbla/pratbubbla.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 85.3476, 211.314 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "gå"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=3]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+
+[node name="Mike_Old" type="KinematicBody2D"]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 167.045, 225.584 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+vframes = 2
+hframes = 4
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/gå" = SubResource( 2 )
+"anims/stå" = SubResource( 3 )
+
+[node name="pratbubbla" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 226.894, 19.0401 )
+
+[node name="point_feet" type="Position2D" parent="."]
+position = Vector2( 158.667, 434.749 )

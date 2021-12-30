@@ -1,0 +1,52 @@
+{
+"first":{
+	"type": "mike_old", 
+	"content": "Välkommen. Vem är du?", 
+	"next": "second"
+	},
+"second":{
+	"type": "mike", 
+	"content": "Mitt namn är Mike Tyngdlyfter! Gymväktaren har skickat mig! Du måste vara Obi-ceps Kenobi?",
+	"next": "third"
+	},
+"third":{
+	"type": "mike_old", 
+	"content": "Gymväktaren... Så det är dags. Ja, jag är Obi-ceps.",
+	"next": "fourth"
+	},
+"fourth":{
+	"type": "mike_old", 
+	"content": "Men så länge dödskalorien finns så kommer ingen kunna få sina gains, det är lönlöst.",
+	"next": "fifth"
+	},
+"fifth":{
+	"type": "mike_old", 
+	"content": "Men så länge dödskalorien finns så kommer ingen kunna få sina gains, det är lönlöst.",
+	"next": "fifth"
+	},
+"fifth":{
+	"type": "j3n5", 
+	"content": "Det finns fortfarande hopp!",
+	"next": "six"
+	},
+"six":{
+	"type": "d4v3", 
+	"content": "Vi har ritningarna till dödskalorien!",
+	"next": "seven"
+	},
+"seven":{
+	"type": "mike", 
+	"content": "Men vi behöver din hjälp!",
+	"next": "eight"
+	},
+"eight":{
+	"type": "mike_old", 
+	"content": "Vem hade kunnat ana! Ett till äventyr! Jag ansluter mig till er!",
+	"next": "nine"
+	},
+"nine":{
+	"type": "mike_old", 
+	"content": "Men var på er vakt, vem vet vad för hemskheter som finns på dödskalorien.",
+	"next": "done"
+	}
+}

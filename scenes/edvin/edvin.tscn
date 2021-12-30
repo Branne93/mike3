@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/edvin.png" type="Texture" id=1]
+[ext_resource path="res://scenes/edvin/edvin.gd" type="Script" id=2]
+[ext_resource path="res://scenes/pratbubbla/pratbubbla.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 86.1989, 73.8601 )
+
+[node name="edvin" type="StaticBody2D"]
+collision_layer = 13
+collision_mask = 13
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -13.9962, -29.1588 )
+texture = ExtResource( 1 )
+centered = false
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 79.118, 74.6501 )
+shape = SubResource( 1 )
+
+[node name="pratbubbla" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 165.622, -33.8242 )

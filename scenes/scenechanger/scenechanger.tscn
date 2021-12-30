@@ -1,12 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://scenes/scenechanger/scenechanger.gd" type="Script" id=1]
-[ext_resource path="res://scenes/splash_screen_intro/splash_screen_intro.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/johanneberg/johanneberg.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/skogen/Skogen.tscn" type="PackedScene" id=4]
 
 [node name="scenechanger" type="Node"]
 script = ExtResource( 1 )
-main_menu_path = ExtResource( 2 )
-johanneberg_path = ExtResource( 3 )
-skogen_path = ExtResource( 4 )

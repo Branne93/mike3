@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export(NodePath) var pathfinder_path
-export var speed = 80
+export var speed = 120
 
 var pathfinder
 var path = null
@@ -15,6 +15,7 @@ func _ready():
 	$Camera2D.limit_bottom = 768
 	set_animation("stå")
 	global.connect("mike_set_animation", self, "set_animation")
+	$CanvasLayer/Inventory.update_items()
 
 func _physics_process(_delta):
 	if not path:
@@ -58,21 +59,4 @@ func talk_to_self(text):
 	
 func get_speech_menu():
 	return $CanvasLayer/speech_menu
-func set_inventory(mike):
-	if !mike:
-		return
-	var self_inventory = get_inventory()
-	var other_inventory = mike.get_inventory()
-	var other_item_nodes = other_inventory.get_node("CanvasLayer/TextureRect/HBoxContainer").get_children()
-	self_inventory.clear()
-	for node in other_item_nodes:
-		self_inventory.add_item(node.name)
-	if global.deo:
-		$CanvasLayer/actions.inventory.show_deo()
-	if global.klader:
-		$CanvasLayer/actions.inventory.show_klader()
-	if global.skor:
-		$CanvasLayer/actions.inventory.show_skor()
-	
-func get_inventory():
-	return $CanvasLayer/actions.inventory
+

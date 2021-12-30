@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/LG.png" type="Texture" id=1]
+[ext_resource path="res://scenes/pratbubbla/pratbubbla.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/LG/LG.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 114.045, 190.037 )
+
+[node name="LG" type="StaticBody2D"]
+collision_layer = 13
+collision_mask = 9
+script = ExtResource( 3 )
+end = "res://scenes/cutscenes/end/ending.tscn"
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 131.694, 193.574 )
+shape = SubResource( 1 )
+
+[node name="pratbubbla" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 12.6934, -25.3867 )
+flipped = true

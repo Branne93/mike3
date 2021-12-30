@@ -17,6 +17,10 @@ var walk = true
 var current_action = "walk"
 var active = true
 
+var j3ns_pekare = load("res://assets/j3n5_pekare.png")
+var d4v3_pekare = load("res://assets/d4v3_pekare.png")
+var mike_old_pekare = load("res://assets/mike_old_pekare.png")
+
 func _ready():
 	mike = get_node(mike_path)
 	actions = get_node(actions_path)
@@ -36,22 +40,26 @@ func _input(event):
 	var left_click_release = event is InputEventMouseButton and event.is_action_released("left_click")
 	if left_click_pressed:
 		$cursor.position = $cursor.get_global_mouse_position() 
+		$cursorplocka.position = $cursorplocka.get_global_mouse_position()
+		$cursorprata.position = $cursorprata.get_global_mouse_position()
+		$cursoruse.position = $cursoruse.get_global_mouse_position()
 	elif current_action == "walk" and left_click_release:
 		emit_signal("go_to", $cursor.position)
 	elif current_action == "prata" and left_click_release:
-		talk($cursor.get_collider())
+		talk($cursorprata.get_collider())
 		reset_cursor()
 	elif current_action == "titta" and left_click_release:
 		titta($cursor.get_collider())
 		reset_cursor()
 	elif current_action == "plocka" and left_click_release:
-		plocka($cursor.get_collider())
-		reset_cursor()
+		plocka($cursorplocka.get_collider())
+		if not current_action in ["j3n5", "d4v3", "mike_old"]:
+			reset_cursor()
 	elif current_action == "putta" and left_click_release:
 		putta($cursor.get_collider())
 		reset_cursor()
 	elif left_click_release:
-		use_item_with($cursor.get_collider())
+		use_item_with($cursoruse.get_collider())
 		reset_cursor()
 
 func action(action):
@@ -63,23 +71,14 @@ func use_item_with(node):
 		mike.talk_to_self("Nä det funkar inte.")
 		return
 	if node.has_method("used_with_item"):
-		if node.used_with_item(current_action):
-			inventory.open_close()
-			inventory.remove_item(current_action)
+		if(node.used_with_item(current_action)):
 			return
-	node = node.get_parent()
-	if node.has_method("used_with_item"):
-		if node.used_with_item(current_action):
-			inventory.open_close()
-			inventory.remove_item(current_action)
+	if node.get_owner().has_method("used_with_item"): #Special case
+		if(node.get_owner().used_with_item(current_action)):
 			return
 	mike.talk_to_self("Nä det funkar inte.")
 	
 func item_used(item_name, item_image):
-	print(current_action, item_name)
-	if (current_action == "monsterhummus" and item_name == "gammal_ol") or (current_action == "gammal_ol" and item_name == "monsterhummus"):
-		get_deo()
-		return
 	current_action = item_name
 	Input.set_custom_mouse_cursor(item_image)
 	
@@ -97,22 +96,26 @@ func talk(node):
 	if node.has_node("dialogue_player"):
 		node.get_node("dialogue_player").start_dialogue()
 		return
-	node = node.get_parent()
-	if not node.has_node("dialogue_player"):
-		return
-	node.get_node("dialogue_player").start_dialogue()
+#	node = node.get_parent()
+#	if not node.has_node("dialogue_player"):
+#		return
+#	node.get_node("dialogue_player").start_dialogue()
 	
 func plocka(node):
 	if not node:
 		return
-	if node.has_method("plocka"):
-		node.plocka(mike)
-		return
-	node = node.get_parent()
-	if not node.has_method("plocka"):
-		return
-	node.plocka(mike)
-
+	if node.name == "j3ns":
+		item_used("j3n5", j3ns_pekare)
+	elif node.name == "d4v3":
+		item_used("d4v3", d4v3_pekare)
+	elif node.name == "Mike_Old":
+		item_used("mike_old", mike_old_pekare)
+	else:
+		inventory_flags.items.append(node.name)
+		inventory_flags.items_collected.append(node.name)
+		node.queue_free()
+		inventory_flags.emit_signal("items_updated")
+	
 func putta(node):
 	if not node:
 		return

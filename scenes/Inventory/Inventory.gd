@@ -5,39 +5,42 @@ signal disable_walk
 signal enable_walk
 var open = false
 
-var item_dict = {"monsterhummus" : load("res://assets/monster_hummus.png"),
-"gammal_ol" : load("res://assets/pripps.png"),
-"rknapp" : load("res://assets/r-knappen.png"),
-"mort" : load("res://assets/mort.png"),
-"trassel" : load("res://assets/trassel.png")}
+
 var node_dict= {}
 
 func _ready():
-	global.connect("json_signal", self, "add_item")
+	#global.connect("json_signal", self, "add_item")
 	$CanvasLayer/TextureRect.connect("mouse_entered", self, "disable_walk")
 	$CanvasLayer/TextureRect.connect("mouse_exited", self, "enable_walk")
+	inventory_flags.connect("items_updated", self, "update_items")
 
-func use_item_monsterhummus():
-	emit_signal("use_item", "monsterhummus", item_dict["monsterhummus"])
-func use_item_gammal_ol():
-	emit_signal("use_item", "gammal_ol", item_dict["gammal_ol"])
-func use_item_rknapp():
-	emit_signal("use_item", "rknapp", item_dict["rknapp"])
+#KNappar kan inte veta vilken knapp de hör till
+func use_item_pripps():
+	emit_signal("use_item", "pripps", inventory_flags.item_dict["pripps"])
+func use_item_pripps2():
+	emit_signal("use_item", "pripps", inventory_flags.item_dict["pripps"])
+func use_item_pripps3():
+	emit_signal("use_item", "pripps", inventory_flags.item_dict["pripps"])
+func use_item_pripps4():
+	emit_signal("use_item", "pripps", inventory_flags.item_dict["pripps"])
+func use_item_pripps5():
+	emit_signal("use_item", "pripps", inventory_flags.item_dict["pripps"])
 	
-func use_item_mort():
-	emit_signal("use_item", "mort", item_dict["mort"])
-func use_item_trassel():
-	emit_signal("use_item", "trassel", item_dict["trassel"])
+func use_item_mynt():
+	emit_signal("use_item", "mynt", inventory_flags.item_dict["mynt"])
+	
+func use_item_blaster():
+	emit_signal("use_item", "blaster", inventory_flags.item_dict["blaster"])
+	
+func use_item_planka():
+	emit_signal("use_item", "planka", inventory_flags.item_dict["planka"])
 	
 func add_item(item):
-	if item == "get_skor":
-		show_skor()
-		return
-	#print("adding " + item)
-	if not item in item_dict.keys():
+	if not item in inventory_flags.item_dict.keys():
+		print("ERROR IN ADDING ITEM " + item)
 		return
 	var button = Button.new()
-	button.set_button_icon(item_dict[item])
+	button.set_button_icon(inventory_flags.item_dict[item])
 	button.name = item
 	button.set_flat(true)
 	button.set_focus_mode(0)
@@ -46,12 +49,15 @@ func add_item(item):
 	button.connect("mouse_exited", self, "enable_walk")
 	$CanvasLayer/TextureRect/HBoxContainer.add_child(button)
 	node_dict[item] = button
-	global.connect("get_deo", self, "show_deo")
-	global.connect("get_klader", self, "show_klader")
 	
 func remove_item(item_name):
 	var item = node_dict[item_name]
 	$CanvasLayer/TextureRect/HBoxContainer.remove_child(item)
+
+func update_items():
+	clear()
+	for item in inventory_flags.items:
+		add_item(item)
 	
 func clear():
 	for key in node_dict.keys():
@@ -73,11 +79,3 @@ func open_close():
 		$CanvasLayer/TextureRect.show()
 		global.emit_signal("mike_set_animation", "tänk")
 		
-func show_deo():
-	$CanvasLayer/deo.show()
-func show_klader():
-	$CanvasLayer/gymklader.show()
-func show_skor():
-	$CanvasLayer/gympaskor.show()
-	global.skor = true
-	

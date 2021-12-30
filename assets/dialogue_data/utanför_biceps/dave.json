@@ -1,0 +1,22 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Fan den här killen blockerar vägen! Vad gör vi?", 
+	"next": "second"
+	},
+"second":{
+	"type": "d4v3", 
+	"content": "Förför honom med en fräsch bicepsdans?",
+	"next": "third"
+	},
+"third":{
+	"type": "d4v3", 
+	"content": "Fast det finns inte ett sånt verb. Och du kan nog inte slå igenom hans rustning.",
+	"next": "fourth"
+	},
+"fourth":{
+	"type": "mike", 
+	"content": "Jag behöver något kraftigare än biceps då. Men vad skulle det kunna vara?",
+	"next": "done"
+	}
+}

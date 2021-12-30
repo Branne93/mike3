@@ -1,0 +1,22 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Fan den här killen blockerar vägen! Vad gör vi?", 
+	"next": "second"
+	},
+"second":{
+	"type": "j3n5", 
+	"content": "Vi kanske kan prata med honom? Han kan vara snäll!",
+	"next": "third"
+	},
+"third":{
+	"type": "d4v3", 
+	"content": "vI kAnSkE kAn PrAtA mEd HoNoM? hAn KaN vArA sNäLl!",
+	"next": "fourth"
+	},
+"fourth":{
+	"type": "mike", 
+	"content": "Yeah som om det någonsin har fungerat. Får lista ut något annat.",
+	"next": "done"
+	}
+}

@@ -1,0 +1,62 @@
+{
+"first":{
+	"type": "other", 
+	"content": "Halt! Här får ingen passera. Här kommer ingen förbi.", 
+	"next": "second"
+	},
+"second":{
+	"type": "option", 
+	"options": ["Jag behöver komma förbi.", "Tänkte du stå här länge?", "Vad är din backstory?"],
+	"next_option": ["över", "länge", "story"]
+	},
+"över":{
+	"type": "mike", 
+	"content": "Men jag behöver komma över till obi-ceps hus!", 
+	"next": "över2"
+	},
+"över2":{
+	"type": "other", 
+	"content": "Kommer aldrig över nån mera. Så gå är du snäll om ditt liv är kärt.", 
+	"next": "done"
+	},
+"länge":{
+	"type": "mike", 
+	"content": "Så när sker det vaktbyte? När tar du kaffepaus? Frågar åt en kompis.", 
+	"next": "länge2"
+	},
+"länge2":{
+	"type": "other", 
+	"content": "Jag har stått här i tjugo år snart. Men med en K-pist är det svårt att diskutera.", 
+	"next": "done"
+	},
+"story":{
+	"type": "mike", 
+	"content": "Berätta lite mer om ditt liv!", 
+	"next": "story2"
+	},
+"story2":{
+	"type": "other", 
+	"content": "Jag gick långsamt hemåt, hemåt den kvällen. Skulle jag få se henne igen?", 
+	"next": "story3"
+	},
+"story3":{
+	"type": "other", 
+	"content": "Hjärnan värkte, hjärtat värkte.Skulle jag bli hel igen?", 
+	"next": "story4"
+	},
+"story4":{
+	"type": "other", 
+	"content": "En dag så stod, så stod du bara där. En mur mellan mig och den jag hade kär.", 
+	"next": "story5"
+	},
+"story5":{
+	"type": "other", 
+	"content": "Vi bor två kvarter ifrån varann. Men en grå prick är det enda jag ser av Susanne", 
+	"next": "story6"
+	},
+"story6":{
+	"type": "other", 
+	"content": "Vi skulle få leva här. Vi skulle få leva här.", 
+	"next": "done"
+	},
+}

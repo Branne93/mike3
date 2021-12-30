@@ -1,0 +1,47 @@
+{
+	"first": {
+		"type": "mike",
+		"content": "God dag!",
+		"next": "second"
+	},
+	"second": {
+		"type": "other",
+		"content": "Välkommen till den läckande prippen!",
+		"next": "third"
+	},
+	"third": {
+		"type": "option",
+		"options": [ "En pripps tack!", "Borde du verkligen dricka bakom baren?", "Trodde det skulle finnas en hel stad här." ],
+		"next_option": [ "pripps", "rude", "stad" ]
+	},
+	"pripps": {
+		"type": "mike",
+		"content": "Langa mig en kalling!",
+		"next": "pripps2"
+	},
+	"pripps2": {
+		"type": "other",
+		"content": "Klart du ska ha en pripps! Bara langa mig en femma!",
+		"next": "done"
+	},
+	"rude": {
+		"type": "mike",
+		"content": "Borde du verkligen dricka på jobbet?",
+		"next": "rude2"
+	},
+	"rude2": {
+		"type": "other",
+		"content": "Borde du verkligen öppna munnen utan att ha borstat tänderna?",
+		"next": "done"
+	},
+	"stad": {
+		"type": "mike",
+		"content": "På min karta ser det ut som det en gång fanns en stad här som försvann pga tidsbrist!",
+		"next": "stad2"
+	},
+	"stad2": {
+		"type": "other",
+		"content": "Stan är överskattat, inte så bra med content. Vad behöver man mer än en pripps?",
+		"next": "done"
+	}
+}

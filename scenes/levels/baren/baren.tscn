@@ -1,0 +1,132 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://scenes/levels/baren/baren.gd" type="Script" id=1]
+[ext_resource path="res://scenes/navigation_Collision_tilemap.tres" type="TileSet" id=2]
+[ext_resource path="res://scenes/j3ns/j3ns.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/mike/mike.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/d4v3/d4v3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/LG/LG.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/baren.png" type="Texture" id=7]
+[ext_resource path="res://scenes/trattooinekarta/trattooinekarta.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/tittarea/tittaarea.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/items/pengamaskin/pengamaskin.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/items/mynt.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/dialogue_player/dialogue_player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/items/blaster.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/items/pripps.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/edvin/edvin.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/Mike_Old/Mike_Old.tscn" type="PackedScene" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 264.103, 184.226 )
+
+[node name="baren" type="Node2D"]
+script = ExtResource( 1 )
+midi_music = "res://assets/musik/cantinaband.mid"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 1.50732 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="edvin" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1141.06, 200.476 )
+
+[node name="dialogue_player" parent="edvin" instance=ExtResource( 12 )]
+dialogue_file = "res://assets/dialogue_data/baren/edvin.json"
+mike_path = NodePath("../../YSort/mike")
+jens_path = NodePath("../../YSort/j3ns")
+dave_path = NodePath("../../YSort/d4v3")
+
+[node name="pengamaskin" parent="." instance=ExtResource( 10 )]
+position = Vector2( 595.991, 328.762 )
+
+[node name="mynt" parent="." instance=ExtResource( 11 )]
+position = Vector2( 586.991, 368.762 )
+
+[node name="pripps3" parent="." instance=ExtResource( 14 )]
+visible = false
+position = Vector2( 1157.64, 345.181 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="mike" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 116.706, 557.178 )
+pathfinder_path = NodePath("../../Navigation2D")
+
+[node name="j3ns" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -131.922, 416.773 )
+mikepath = NodePath("../mike")
+
+[node name="dialogue_player" parent="YSort/j3ns" instance=ExtResource( 12 )]
+dialogue_file = "res://assets/dialogue_data/baren/jens.json"
+mike_path = NodePath("../../mike")
+jens_path = NodePath("..")
+dave_path = NodePath("../../d4v3")
+mike_old_path = NodePath("../../Mike_Old")
+
+[node name="d4v3" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -312.359, 395.449 )
+mikepath = NodePath("../mike")
+
+[node name="dialogue_player" parent="YSort/d4v3" instance=ExtResource( 12 )]
+dialogue_file = "res://assets/dialogue_data/baren/dave.json"
+mike_path = NodePath("../../mike")
+jens_path = NodePath("../../j3ns")
+dave_path = NodePath("..")
+mike_old_path = NodePath("../../Mike_Old")
+
+[node name="Mike_Old" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( -574.297, 321.063 )
+mikepath = NodePath("../mike")
+
+[node name="dialogue_player" parent="YSort/Mike_Old" instance=ExtResource( 12 )]
+dialogue_file = "res://assets/dialogue_data/baren/mike_old.json"
+mike_path = NodePath("../../mike")
+jens_path = NodePath("../../j3ns")
+dave_path = NodePath("../../d4v3")
+mike_old_path = NodePath("..")
+
+[node name="LG" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1774.86, 377.629 )
+
+[node name="dialogue_player" parent="LG" instance=ExtResource( 12 )]
+dialogue_file = "res://assets/dialogue_data/baren/LG.json"
+mike_path = NodePath("../../YSort/mike")
+jens_path = NodePath("../../YSort/j3ns")
+dave_path = NodePath("../../YSort/d4v3")
+mike_old_path = NodePath("../../YSort/Mike_Old")
+
+[node name="dialogue_player2" parent="LG" instance=ExtResource( 12 )]
+dialogue_file = "res://assets/dialogue_data/baren/mike_old_LG.json"
+mike_path = NodePath("../../YSort/mike")
+jens_path = NodePath("../../YSort/j3ns")
+dave_path = NodePath("../../YSort/d4v3")
+mike_old_path = NodePath("../../YSort/Mike_Old")
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Navigation2D"]
+visible = false
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 1, 0, 655375, 1, 0, 655376, 1, 0, 655377, 1, 0, 655378, 1, 0, 655379, 1, 0, 655380, 1, 0, 655381, 1, 0, 655382, 1, 0, 655383, 1, 0, 655384, 1, 0, 655385, 1, 0, 720896, 1, 0, 720897, 1, 0, 720898, 1, 0, 720899, 1, 0, 720900, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0, 720904, 1, 0, 720905, 1, 0, 720906, 1, 0, 720907, 1, 0, 720908, 1, 0, 720909, 1, 0, 720910, 1, 0, 720911, 1, 0, 720912, 1, 0, 720913, 1, 0, 720914, 1, 0, 720915, 1, 0, 720916, 1, 0, 720917, 1, 0, 720918, 1, 0, 720919, 1, 0, 720920, 1, 0, 720921, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048578, 1, 0, 1048579, 1, 0, 1048580, 1, 0, 1048581, 1, 0, 1048582, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048590, 1, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 1, 0, 1048594, 1, 0, 1048595, 1, 0, 1048596, 1, 0, 1048597, 1, 0, 1048598, 1, 0, 1048599, 1, 0, 1048600, 1, 0, 1048601, 1, 0, 1048602, 1, 0, 1114112, 1, 0, 1114113, 1, 0, 1114114, 1, 0, 1114115, 1, 0, 1114116, 1, 0, 1114117, 1, 0, 1114118, 1, 0, 1114119, 1, 0, 1114120, 1, 0, 1114121, 1, 0, 1114122, 1, 0, 1114123, 1, 0, 1114124, 1, 0, 1114125, 1, 0, 1114126, 1, 0, 1114127, 1, 0, 1114128, 1, 0, 1114129, 1, 0, 1114130, 1, 0, 1114131, 1, 0, 1114132, 1, 0, 1114133, 1, 0, 1114134, 1, 0, 1114135, 1, 0, 1114136, 1, 0, 1114137, 1, 0, 1114138, 1, 0 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="trattooinekarta" parent="CanvasLayer" instance=ExtResource( 8 )]
+visible = false
+
+[node name="tittaarea" parent="." instance=ExtResource( 9 )]
+collision_mask = 0
+titta_text = "Vad du än gör, kolla inte upp vad den här genren heter."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tittaarea"]
+position = Vector2( 272.503, 383.263 )
+shape = SubResource( 1 )
+
+[node name="blaster" parent="." instance=ExtResource( 13 )]
+visible = false
+position = Vector2( 1409.99, 659.283 )

@@ -1,0 +1,62 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Så ni kommer från rymden alltså?", 
+	"next": "second"
+	},
+"second":{
+	"type": "other", 
+	"content": "Alltså inte från början, jag blev byggd på planeten Jo.",
+	"next": "third"
+	},
+"third":{
+	"type": "mike", 
+	"content": "Nä!", 
+	"next": "fourth"
+	},
+"fourth":{
+	"type": "other", 
+	"content": "Jojomen!",
+	"next": "fifth"
+	},
+"fifth":{
+	"type": "option", 
+	"options": ["Så vad hände egentligen?", "Ska det inte vara en prinsessa med i storyn?", "Vad är en astrovegdroid?"],
+	"next_option": ["vad", "prinsessa", "veg"]
+	},
+"vad":{
+	"type": "mike", 
+	"content": "Så vad är det som har hänt?", 
+	"next": "vad2"
+	},
+"vad2":{
+	"type": "other", 
+	"content": "Vi har lyckats få tag på ritningar till dödskalorien, en rymdstation byggd av bara tomma cals.",
+	"next": "vad3"
+	},
+"vad3":{
+	"type": "other", 
+	"content": "Men mörkrets furste förföljde oss och vi var tvugna att fly hit.",
+	"next": "done"
+	},
+"prinsessa":{
+	"type": "mike", 
+	"content": "Så, öh, ingen prinsessa eller något som behöver räddas?", 
+	"next": "nej"
+	},
+"nej":{
+	"type": "other", 
+	"content": "Nä tyvärr, förstår att du är sugen. DU har ju bott här ensam i öknen ett tag, rätt torrt kan jag tänka mig.",
+	"next": "done"
+	},
+"veg":{
+	"type": "mike", 
+	"content": "Så, öh, vad är en astrovegdroid?",
+	"next": "veg2"
+	},
+"veg2":{
+	"type": "other", 
+	"content": "Jag kan fixa med veganbaserad teknologi. Det kan nog komma till användning.",
+	"next": "done"
+	}
+}

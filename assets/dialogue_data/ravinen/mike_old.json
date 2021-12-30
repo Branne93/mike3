@@ -1,0 +1,22 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Tror du att du kan använda någon form av telepatisk kraft för att hämta prippsen?", 
+	"next": "second"
+	},
+"second":{
+	"type": "mike_old", 
+	"content": "Va? Varför skulle jag ha det?",
+	"next": "third"
+	},
+"third":{
+	"type": "mike", 
+	"content": "Tänkte att du var någon form av ökentrollkarl bara.",
+	"next": "fourth"
+	},
+"fourth":{
+	"type": "mike_old", 
+	"content": "Det är ett jävligt konstigt antagande att göra.",
+	"next": "done"
+	}
+}

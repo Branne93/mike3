@@ -1,0 +1,52 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Hej, vem är du?", 
+	"next": "second"
+	},
+"second":{
+	"type": "other", 
+	"content": "Love Goato, kapten på Millenium Falcon",
+	"next": "third"
+	},
+"third":{
+	"type": "d4v3", 
+	"content": "Han kan flyga oss till imperiets huvudsäte och hjälpa oss fixa allt!",
+	"next": "fourth"
+	},
+"fourth":{
+	"type": "mike", 
+	"content": "Kan du flyga oss till imperiets huvudsäte och hjälpa oss fixa allt?",
+	"next": "fifth"
+	},
+"fifth":{
+	"type": "other", 
+	"content": "Visst, 5 pripps kostar det.",
+	"next": "sixth"
+	},
+"sixth":{
+	"type": "option", 
+	"options": ["Varsågod!", "Det är för mycket"],
+	"next_option": ["fake", "nein"]
+	},
+"fake":{
+	"type": "mike", 
+	"content": "Öh yeah, varsågod! De ligger på ditt skepp!",
+	"next": "fake2"
+	},
+"fake2":{
+	"type": "other", 
+	"content": "Hörru du har inte gett mig 5 pripps ännu. Kom tillbaka när du lite mer, mmm, välutrustad.",
+	"next": "done"
+	},
+"nein":{
+	"type": "mike", 
+	"content": "Fan är det för jävla pris? För den mängden pripps kan jag skaffa mitt eget skepp!",
+	"next": "nein2"
+	},
+"nein2":{
+	"type": "other", 
+	"content": "Synd men det är vad det kostar! Inte jag som sätter priset", 
+	"next": "done"
+	}
+}

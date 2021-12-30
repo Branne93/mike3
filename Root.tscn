@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/scenechanger/scenechanger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Root.gd" type="Script" id=2]
-[ext_resource path="res://assets/ljud/pianoklirr.wav" type="AudioStream" id=3]
+[ext_resource path="res://addons/midi/MidiPlayer.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade_in"
@@ -134,12 +134,9 @@ tracks/3/keys = {
 
 [node name="Root" type="Node2D"]
 script = ExtResource( 2 )
+start_scene_path = "res://scenes/cutscenes/splash_screen_intro/splash_screen_intro.tscn"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-
-[node name="scenechanger" parent="." instance=ExtResource( 1 )]
-root_nodepath = NodePath("..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fade_in = SubResource( 1 )
@@ -155,3 +152,10 @@ margin_bottom = 768.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MidiPlayer" parent="." instance=ExtResource( 4 )]
+loop = true
+soundfont = "res://assets/musik/SC-55.SoundFont.v1.2b.sf2"
+
+[node name="scenechanger" parent="." instance=ExtResource( 1 )]
+root_nodepath = NodePath("..")

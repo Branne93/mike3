@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/dialogue_player/dialogue_player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/utanför_obi_ceps.png" type="Texture" id=2]
+[ext_resource path="res://scenes/levels/utanfor_biceps/utanfor.gd" type="Script" id=3]
+[ext_resource path="res://scenes/stromtrooper/stromtrooper.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/mike/mike.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/navigation_Collision_tilemap.tres" type="TileSet" id=6]
+[ext_resource path="res://scenes/j3ns/j3ns.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/d4v3/d4v3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/trattooinekarta/trattooinekarta.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/tittarea/tittaarea.tscn" type="PackedScene" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 98.0446, 94.0926 )
+
+[node name="utanfor" type="Node2D"]
+script = ExtResource( 3 )
+midi_music = "res://assets/musik/EP4__Ben's_Death-TIE_Fighter_Attack.mid"
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="stromtrooper" parent="." instance=ExtResource( 4 )]
+position = Vector2( 803.167, 212.821 )
+collision_layer = 13
+collision_mask = 13
+
+[node name="dialogue_player" parent="stromtrooper" instance=ExtResource( 1 )]
+dialogue_file = "res://assets/dialogue_data/utanför_biceps/stormtrooper.json"
+mike_path = NodePath("../../mike")
+jens_path = NodePath("../../j3ns")
+dave_path = NodePath("../../d4v3")
+
+[node name="mike" parent="." instance=ExtResource( 5 )]
+position = Vector2( 223.924, 525.575 )
+pathfinder_path = NodePath("../Navigation2D")
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Navigation2D"]
+visible = false
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 1245184, 1, 0, 1245185, 1, 0, 1245186, 1, 0, 1245187, 1, 0, 1245188, 1, 0, 1245189, 1, 0, 1245190, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1245194, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245198, 1, 0, 1245199, 1, 0, 1245200, 1, 0, 1245201, 1, 0, 1245202, 1, 0, 1245203, 1, 0, 1245204, 1, 0, 1245205, 1, 0, 1245206, 1, 0, 1245207, 1, 0, 1245208, 1, 0, 1245209, 1, 0, 1245210, 1, 0, 1245211, 1, 0, 1245212, 1, 0, 1376255, 1, 0, 1310720, 1, 0, 1310721, 1, 0, 1310722, 1, 0, 1310723, 1, 0, 1310724, 1, 0, 1310725, 1, 0, 1310726, 1, 0, 1310727, 1, 0, 1310728, 1, 0, 1310729, 1, 0, 1310730, 1, 0, 1310731, 1, 0, 1310732, 1, 0, 1310733, 1, 0, 1310734, 1, 0, 1310735, 1, 0, 1310736, 1, 0, 1310737, 1, 0, 1310738, 1, 0, 1310739, 1, 0, 1310740, 1, 0, 1310741, 1, 0, 1310742, 1, 0, 1310743, 1, 0, 1310744, 1, 0, 1310745, 1, 0, 1310746, 1, 0, 1310747, 1, 0, 1310748, 1, 0, 1376256, 1, 0, 1376257, 1, 0, 1376258, 1, 0, 1376259, 1, 0, 1376260, 1, 0, 1376261, 1, 0, 1376262, 1, 0, 1376263, 1, 0, 1376264, 1, 0, 1376265, 1, 0, 1376266, 1, 0, 1376267, 1, 0, 1376268, 1, 0, 1376269, 1, 0, 1376270, 1, 0, 1376271, 1, 0, 1376272, 1, 0, 1376273, 1, 0, 1376274, 1, 0, 1376275, 1, 0, 1376276, 1, 0, 1376277, 1, 0, 1376278, 1, 0, 1376279, 1, 0, 1376280, 1, 0, 1376281, 1, 0, 1376282, 1, 0, 1376283, 1, 0, 1376284, 1, 0, 1441792, 1, 0, 1441793, 1, 0, 1441794, 1, 0, 1441795, 1, 0, 1441796, 1, 0, 1441797, 1, 0, 1441798, 1, 0, 1441799, 1, 0, 1441800, 1, 0, 1441801, 1, 0, 1441802, 1, 0, 1441803, 1, 0, 1441804, 1, 0, 1441805, 1, 0, 1441806, 1, 0, 1441807, 1, 0, 1441808, 1, 0, 1441809, 1, 0, 1441810, 1, 0, 1441811, 1, 0, 1441812, 1, 0, 1441813, 1, 0, 1441814, 1, 0, 1441815, 1, 0, 1441816, 1, 0, 1441817, 1, 0, 1441818, 1, 0, 1441819, 1, 0, 1441820, 1, 0, 1441821, 1, 0, 1441822, 1, 0, 1507328, 1, 0, 1507329, 1, 0, 1507330, 1, 0, 1507331, 1, 0, 1507332, 1, 0, 1507333, 1, 0, 1507334, 1, 0, 1507335, 1, 0, 1507336, 1, 0, 1507337, 1, 0, 1507338, 1, 0, 1507339, 1, 0, 1507340, 1, 0, 1507341, 1, 0, 1507342, 1, 0, 1507343, 1, 0, 1507344, 1, 0, 1507345, 1, 0, 1507346, 1, 0, 1507347, 1, 0, 1507348, 1, 0, 1507349, 1, 0, 1507350, 1, 0, 1507351, 1, 0, 1507352, 1, 0, 1507353, 1, 0, 1507354, 1, 0, 1507355, 1, 0, 1507356, 1, 0, 1507357, 1, 0, 1507358, 1, 0 )
+
+[node name="d4v3" parent="." instance=ExtResource( 8 )]
+position = Vector2( -264.638, 455.252 )
+mikepath = NodePath("../mike")
+
+[node name="dialogue_player" parent="d4v3" instance=ExtResource( 1 )]
+dialogue_file = "res://assets/dialogue_data/utanför_biceps/dave.json"
+mike_path = NodePath("../../mike")
+jens_path = NodePath("../../j3ns")
+dave_path = NodePath("..")
+
+[node name="j3ns" parent="." instance=ExtResource( 7 )]
+position = Vector2( -35.1617, 412.687 )
+mikepath = NodePath("../mike")
+
+[node name="dialogue_player" parent="j3ns" instance=ExtResource( 1 )]
+dialogue_file = "res://assets/dialogue_data/utanför_biceps/jens.json"
+mike_path = NodePath("../../mike")
+jens_path = NodePath("..")
+dave_path = NodePath("../../d4v3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="trattooinekarta" parent="CanvasLayer" instance=ExtResource( 9 )]
+visible = false
+
+[node name="tittaarea" parent="." instance=ExtResource( 10 )]
+position = Vector2( 216.915, -65.1604 )
+titta_text = "Det där måste bara obi-ceps hus!"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tittaarea"]
+position = Vector2( 1027.64, 154.492 )
+shape = SubResource( 1 )

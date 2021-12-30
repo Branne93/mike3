@@ -1,0 +1,22 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Dags att ta sig till gymmet!", 
+	"next": "second"
+	},
+"second":{
+	"type": "mike", 
+	"content": "Vänta lite nu, vart är mina gymkläder?",
+	"next": "third"
+	},
+"third":{
+	"type": "mike", 
+	"content": "Jag såg dem inte däruppe... Jag får väl ta och fixa nya!", 
+	"next" : "fourth"
+	},
+"fourth":{
+	"type": "mike", 
+	"content": "Vad som behövs borde jag kunna ta reda på vid gymmet.!", 
+	"next" : "done"
+	}
+}

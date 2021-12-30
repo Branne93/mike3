@@ -1,7 +1,13 @@
 extends Node
 export(String, FILE, "*.json") var dialogue_file
 export(NodePath) var mike_path
-var mike
+export(NodePath) var jens_path
+export(NodePath) var dave_path
+export(NodePath) var mike_old_path
+onready var mike = get_node(mike_path)
+var jens
+var dave
+var mike_old
 var other
 var speech_menu
 
@@ -9,9 +15,16 @@ var dialogue = {}
 var current = {}
 var active = false
 
+signal dialogue_finished
+
 
 func _ready():
-	mike = get_node(mike_path)
+	if jens_path:
+		jens = get_node(jens_path)
+	if dave_path:
+		dave = get_node(dave_path)
+	if mike_old_path:
+		mike_old = get_node(mike_old_path)
 	speech_menu = mike.get_speech_menu()
 	other = get_parent()
 	index_dialogue()
@@ -21,6 +34,7 @@ func _input(event):
 		next_dialogue()
 	
 func index_dialogue():
+	dialogue = {}
 	dialogue = load_dialogue(dialogue_file)
 	current = dialogue[dialogue.keys()[0]]
 	
@@ -32,6 +46,12 @@ func start_dialogue():
 	var type = current["type"]
 	if type == "mike":
 		mike_prata()
+	elif type == "j3n5":
+		jens_prata()
+	elif type == "d4v3":
+		dave_prata()
+	elif type == "mike_old":
+		mike_old_prata()
 	elif type == "other":
 		other_prata()
 	elif type == "option":
@@ -46,6 +66,12 @@ func next_dialogue():
 		var type = current["type"]
 		if type == "mike":
 			mike_prata()
+		elif type == "j3n5":
+			jens_prata()
+		elif type == "d4v3":
+			dave_prata()
+		elif type == "mike_old":
+			mike_old_prata()
 		elif type == "other":
 			other_prata()
 		elif type == "option":
@@ -60,6 +86,7 @@ func finish_dialogue():
 	var mouse_control = mike.get_node("mouse_control")
 	speech_menu.disconnect("menu_choice", self, "select_option")
 	mouse_control.active = true
+	emit_signal("dialogue_finished")
 
 func load_dialogue(file_path):
 	var file = File.new()
@@ -70,6 +97,15 @@ func load_dialogue(file_path):
 func mike_prata():
 	mike.set_text(current["content"])
 	mike.show_pratbubbla()
+func jens_prata():
+	jens.set_text(current["content"])
+	jens.show_pratbubbla()
+func dave_prata():
+	dave.set_text(current["content"])
+	dave.show_pratbubbla()
+func mike_old_prata():
+	mike_old.set_text(current["content"])
+	mike_old.show_pratbubbla()
 func other_prata():
 	other.set_text(current["content"])
 	other.show_pratbubbla()
@@ -86,6 +122,10 @@ func select_option(option):
 	
 func hide_all():
 	mike.hide_pratbubbla()
+	jens.hide_pratbubbla()
+	dave.hide_pratbubbla()
+	if mike_old:
+		mike_old.hide_pratbubbla()
 	if other.has_method("hide_pratbubbla"):
 		other.hide_pratbubbla()
 	speech_menu.hide()

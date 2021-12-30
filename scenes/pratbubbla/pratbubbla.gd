@@ -5,4 +5,4 @@ func _ready():
 	$Sprite.flip_h = flipped
 	
 func set_text(text):
-	$Label.text = text
+	$Sprite/Label.text = text

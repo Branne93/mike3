@@ -1,0 +1,32 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Tjena", 
+	"next": "second"
+	},
+"second":{
+	"type": "other", 
+	"content": "Beeep blööp, äh bah skoja jag är en normal robot. Läget?",
+	"next": "third"
+	},
+"third":{
+	"type": "mike", 
+	"content": "Så vad tycker du om mitt hem?", 
+	"next": "fourth"
+	},
+"fourth":{
+	"type": "other", 
+	"content": "Öh... Yeah! Sand!",
+	"next": "fifth"
+	},
+"fifth":{
+	"type": "mike", 
+	"content": "...", 
+	"next": "sixth"
+	},
+"sixth":{
+	"type": "other", 
+	"content": "...",
+	"next": "done"
+	}
+}

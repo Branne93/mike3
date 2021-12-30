@@ -1,0 +1,32 @@
+{
+"first":{
+	"type": "mike_old", 
+	"content": "God dag", 
+	"next": "second"
+	},
+"second":{
+	"type": "other", 
+	"content": "Vem är du?",
+	"next": "third"
+	},
+"third":{
+	"type": "mike_old", 
+	"content": "Du vill sänka priset...",
+	"next": "fourth"
+	},
+"fourth":{
+	"type": "other", 
+	"content": "Nä, det vill jag egentligen inte.",
+	"next": "fifth"
+	},
+"fifth":{
+	"type": "mike_old", 
+	"content": "Fan det funkade inte, pensionärsrabatt då?",
+	"next": "sixth"
+	},
+"sixth":{
+	"type": "other", 
+	"content": "Röv också, min enda svaghet! Aja, 5 pripps då!",
+	"next": "done"
+	}
+}

@@ -1,0 +1,22 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Jag ser det jag vill ha. Jag ser prippsen.", 
+	"next": "second"
+	},
+"second":{
+	"type": "j3n5", 
+	"content": "Ibland kan det kännas som det finns en klyfta mellan oss och det vi begär mest.",
+	"next": "third"
+	},
+"third":{
+	"type": "j3n5", 
+	"content": "Då brukar jag ta en god funderare, så brukar allt lösa sig.",
+	"next": "fourth"
+	},
+"fourth":{
+	"type": "mike", 
+	"content": "Va? Var det en hint? Jag fattar inte alls.",
+	"next": "done"
+	}
+}

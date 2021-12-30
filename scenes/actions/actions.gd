@@ -6,6 +6,7 @@ signal disable_walk
 signal enable_walk
 
 var inventory
+var inventory_open = false
 
 
 func _ready():
@@ -18,6 +19,7 @@ func _ready():
 	for child in get_children():
 		child.connect("mouse_entered", self, "disable_walk")
 		child.connect("mouse_exited", self, "enable_walk")
+	
 
 func prata():
 	emit_signal("action", "prata")
@@ -34,7 +36,11 @@ func disable_walk():
 	
 func inventory_button():
 	inventory.open_close()
-	if inventory.open:
+	if not inventory_open:
+		#$CanvasLayer/TextureRect.show()
 		$inventory.icon = load("res://assets/inventory_open.png")
+		inventory_open = true
 	else:
+		inventory_open = false
+		#$CanvasLayer/TextureRect.hide()
 		$inventory.icon = load("res://assets/inventory_closed.png")

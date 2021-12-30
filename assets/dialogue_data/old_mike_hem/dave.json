@@ -1,0 +1,67 @@
+{
+"first":{
+	"type": "mike", 
+	"content": "Vad tror du om Obi-ceps?", 
+	"next": "second"
+	},
+"second":{
+	"type": "d4v3", 
+	"content": "Ni ser rätt lika ut. Är ni släkt?",
+	"next": "third"
+	},
+"third":{
+	"type": "mike", 
+	"content": "Nä jag tror inte det.",
+	"next": "fourth"
+	},
+"fourth":{
+	"type": "option", 
+	"options": ["Vad tycker du om sand?", "Tror du Lovo Goto saknar sin blaster?","På en skala på 1-10 hur veg är du?"],
+	"next_option": ["sand", "blaster", "veg"]
+	},
+"sand":{
+	"type": "mike", 
+	"content": "Diggar du öknen mycket? Åsikter om sand?",
+	"next": "sand2"
+	},
+"sand2":{
+	"type": "d4v3", 
+	"content": "Jag älskar sand, Det är grovt och grovt och irriterande och det kommer överallt. Precis som jag.",
+	"next": "done"
+	},
+"blaster":{
+	"type": "mike", 
+	"content": "Stal inte vi den där guyens blaster?",
+	"next": "blaster2"
+	},
+"blaster2":{
+	"type": "d4v3", 
+	"content": "Du menar han som tar hutlösa priser för att riskera livet på vårt quest? Det stämmer, men skit i det.",
+	"next": "done"
+	},
+"veg":{
+	"type": "mike", 
+	"content": "Du är ganska veg right?",
+	"next": "veg2"
+	},
+"veg2":{
+	"type": "d4v3", 
+	"content": "Right.",
+	"next": "veg3"
+	},
+"veg3":{
+	"type": "mike", 
+	"content": "Liksom väldigt veg?",
+	"next": "veg4"
+	},
+"veg4":{
+	"type": "d4v3", 
+	"content": "Mest veg på hela planeten faktiskt. Astronomiskt veg skulle jag säga.",
+	"next": "veg5"
+	},
+"veg5":{
+	"type": "d4v3", 
+	"content": "Är ju en Astrovegdroid så det kommer med yrket.",
+	"next": "done"
+	}
+}

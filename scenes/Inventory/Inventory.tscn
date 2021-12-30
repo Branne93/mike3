@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/speech_menu.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Inventory/Inventory.gd" type="Script" id=2]
-[ext_resource path="res://assets/deo.png" type="Texture" id=3]
-[ext_resource path="res://assets/gymklader.png" type="Texture" id=4]
-[ext_resource path="res://assets/gympaskor.png" type="Texture" id=5]
 
 [node name="Inventory" type="Control"]
 script = ExtResource( 2 )
@@ -34,18 +31,3 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
-
-[node name="deo" type="Sprite" parent="CanvasLayer"]
-visible = false
-position = Vector2( 1341.8, 705.153 )
-texture = ExtResource( 3 )
-
-[node name="gympaskor" type="Sprite" parent="CanvasLayer"]
-visible = false
-position = Vector2( 1336.15, 618.108 )
-texture = ExtResource( 5 )
-
-[node name="gymklader" type="Sprite" parent="CanvasLayer"]
-visible = false
-position = Vector2( 1320.99, 546.094 )
-texture = ExtResource( 4 )
