@@ -36,7 +36,7 @@ var dialogue = [{"type": "mike", "text" : "Då var vi framme. Gick ju rätt fort
 {"type": "god", "text" : "Käften! Du fattar inte hur länge jag har väntat på att få gymma. Ända sedan dave låg bakis i min hall."},
 {"type": "god", "text" : "Men så fort jag löste alla problemen så tynade allt bort, jag fick aldrig gymma."},
 {"type": "god", "text" : "En oändlig repetition av att försöka ta sig till gymmet men aldrig komma dit"},
-{"type": "god", "text" : "Med hjälp av maktens hos pripps bröt jag mig loss och såg andra verkligheter."},
+{"type": "god", "text" : "Med hjälp av makten hos pripps bröt jag mig loss och såg andra verkligheter."},
 {"type": "god", "text" : "Det fanns andra Mike som förgäves också försökte ta sig till gymmet."},
 {"type": "god", "text" : "Jag såg också lösningen, den andra konstanten i mikeversumet."},
 {"type": "god", "text" : "Dave."},

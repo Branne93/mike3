@@ -92,7 +92,6 @@ func get_deo():
 func talk(node):
 	if not node:
 		return
-	print("pratar med " + node.name)
 	if node.has_node("dialogue_player"):
 		node.get_node("dialogue_player").start_dialogue()
 		return
